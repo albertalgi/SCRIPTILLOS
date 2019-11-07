@@ -6,13 +6,17 @@ echo
 echo "################## CLONNING ##################"
 echo
 
-echo "--------------- Put your charged tag ---------------"
-read i
-mfoc -O carregada.dmp
+echo "Do you want to dump a charged card? [y/n]"
+read response
+if [ "$response" = "y" ]
+then
+    echo "--------------- Put your charged tag ---------------"
+    mfoc -O carregada.dmp
+fi
 
 echo
 echo "-------------- Put the tag you want to charge ---------------"
-read i
+read response
 mfoc -O descarregada.dmp
 
 echo
