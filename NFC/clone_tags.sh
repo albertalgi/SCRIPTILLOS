@@ -6,6 +6,8 @@ echo
 echo "################## CLONNING ##################"
 echo
 
+sudo service pcscd restart
+
 echo "Do you want to dump a charged card? [y/n]"
 read response
 if [ "$response" = "y" ]
